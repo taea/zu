@@ -1,0 +1,59 @@
+---
+title: Welcome to Middleman
+---
+
+.container
+  %h2 うごいた？
+  .card
+    %img.card-img-top{:alt => "Card image cap", "src" => "images/sample1.jpg", class: 'card-img'}/
+    .card-block
+      %h4.card-title Card title
+      %p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
+      %a.btn.btn-primary{:href => "#"} Button
+
+  .card-columns
+    .card
+      %img.card-img-top{:alt => "Card image cap", "data-src" => "..."}/
+      .card-block
+        %h4.card-title Card title that wraps to a new line
+        %p.card-text This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+    .card.card-block
+      %blockquote.card-blockquote
+        %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+        %footer
+          %small.text-muted
+            Someone famous in
+            %cite{:title => "Source Title"} Source Title
+    .card
+      %img.card-img-top{:alt => "Card image cap", "data-src" => "..."}/
+      .card-block
+        %h4.card-title Card title
+        %p.card-text This card has supporting text below as a natural lead-in to additional content.
+        %p.card-text
+          %small.text-muted Last updated 3 mins ago
+    .card.card-block.card-inverse.card-primary.text-xs-center
+      %blockquote.card-blockquote
+        %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.
+        %footer
+          %small
+            Someone famous in
+            %cite{:title => "Source Title"} Source Title
+    .card.card-block.text-xs-center
+      %h4.card-title Card title
+      %p.card-text This card has supporting text below as a natural lead-in to additional content.
+      %p.card-text
+        %small.text-muted Last updated 3 mins ago
+    .card
+      %img.card-img{:alt => "Card image", "data-src" => "..."}/
+    .card.card-block.text-xs-right
+      %blockquote.card-blockquote
+        %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+        %footer
+          %small.text-muted
+            Someone famous in
+            %cite{:title => "Source Title"} Source Title
+    .card.card-block
+      %h4.card-title Card title
+      %p.card-text This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.
+      %p.card-text
+        %small.text-muted Last updated 3 mins ago
