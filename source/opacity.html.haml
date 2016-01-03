@@ -59,10 +59,24 @@ title: Welcome to Middleman
         %p.opacity-card__description
           吠えるとついつい叱っていませんか？いぬのしつけには逆効果です。正しい方法を学びましょう。
 
-  .section.content
-    .opacity-card.is-mode
-      = link_to '#', class: 'opacity-card__inner' do
-        %h1.opacity-card__title
-          いぬの正しいしつけ方を学ぼう
-        %p.opacity-card__description
-          吠えるとついつい叱っていませんか？いぬのしつけには逆効果です。正しい方法を学びましょう。
+  - filters = %w(multiply screen overlay darken lighten color-dodge color-burn hard-light soft-light difference exclusion hue saturation color luminosity)
+  - filters.each do |filter|
+    .section.content
+      .opacity-card.is-mode{class: "is-#{filter}"}
+        = link_to '#', class: 'opacity-card__inner' do
+          %h1.opacity-card__title
+            いぬの正しいしつけ方を学ぼう
+          %p.opacity-card__description
+            = filter
+            吠えるとついつい叱っていませんか？いぬのしつけには逆効果です。正しい方法を学びましょう。
+    
+  - filters.each do |filter|
+    .section.content
+      .opacity-card.is-mode.is-blue{class: "is-#{filter}"}
+        = link_to '#', class: 'opacity-card__inner' do
+          %h1.opacity-card__title
+            いぬの正しいしつけ方を学ぼう
+          %p.opacity-card__description
+            = filter
+            吠えるとついつい叱っていませんか？いぬのしつけには逆効果です。正しい方法を学びましょう。
+
