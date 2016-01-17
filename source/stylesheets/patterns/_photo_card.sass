@@ -1,43 +1,78 @@
+$photo-card-width: 360px
+$photo-card-height: 300px
+$photo-card-blue: #0087e0
+$photo-card-red: #ed5222
+$photo-card-brown: #70402a
+=photo-card-gradient($color: 'black', $opacity: .7, $persent: 40%)
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0) $persent, rgba($color, $opacity) 100%)
+
 .photo-card
-  $width: 360px
-  $height: 300px
-  width: $width
-  height: $height
-  background-size: cover
-  background-color: #000
   position: relative
-  border-radius: 10px
-  color: white
+  width: $photo-card-width
+  height: $photo-card-height
+  border-radius: 6px
   overflow: hidden
 
-  &__image
-    position: absolute
-    width: auto
-    height: $height
-    z-index: 1
-    &.is-wide
-      height: auto
-      width: $width
+.photo-card__image
+  position: absolute
+  z-index: 1
+  width: auto
+  height: $photo-card-height
+  &.is-wide
+    height: auto
+    width: $photo-card-width
 
-  &__layer
-    display: block
-    width: 100%
-    height: 100%
-    border-radius: 10px
-    background-color: rgba(black, .5)
-    padding: 55% 15px 15px 15px
-    color: rgba(white, .8)
-    transition-duration: .5s
-    position: relative
-    z-index: 2
+.photo-card__layer
+  position: relative
+  z-index: 2
+  display: block
+  width: 100%
+  height: 100%
+  border-radius: 6px
+  padding: 180px 15px 15px 15px
+  background-color: rgba(black, .4)
+  color: rgba(white, .8)
+  transition-duration: .5s
+  &:hover
+    background-color: rgba(black, .3)
+    color: white
+    text-decoration: none
+  &.is-gradient
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 40%,rgba(0,0,0,.7) 100%)
     &:hover
-      background-color: rgba(black, .3)
-      color: white
-      text-decoration: none
+      background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 40%,rgba(0,0,0,.5) 100%)
+    &.is-blue
+      +photo-card-gradient($photo-card-blue, .8, 30%)
+    &.is-red
+      +photo-card-gradient($photo-card-red, .8, 30%)
+    &.is-brown
+      +photo-card-gradient($photo-card-brown, .8, 30%)
+    &.is-white
+      +photo-card-gradient(white, .9, 20%)
+  &.is-no-effect
+    background-color: transparent
+  &.is-particular
+    padding: 15px
+    border-top-left-radius: 0
+    border-top-right-radius: 0
+    height: 45%
+    top: 55%
+  &.is-blue
+    background-color: rgba($photo-card-blue, .5)
+    color: rgba(white, .9)
+  &.is-red
+    background-color: rgba($photo-card-red, .5)
+    color: rgba(white, .9)
+  &.is-brown
+    background-color: rgba($photo-card-brown, .5)
+    color: rgba(white, .9)
+  &.is-white
+    background-color: rgba(white, .5)
+    color: rgba(black, .8)
 
-  &__title
-    font-weight: bold
-    font-size: 130%
+.photo-card__title
+  font-weight: bold
+  font-size: 130%
 
-  &__description
-    font-size: 90%
+.photo-care__description
+  font-size: 90%
